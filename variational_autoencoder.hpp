@@ -24,7 +24,9 @@ public:
         std::pmr::memory_resource* resource = std::pmr::get_default_resource()
     )
         pre(*(encoderNeuronsPerLayer.begin() + encoderNeuronsPerLayer.size() - 1) / 2 == *decoderNeuronsPerLayer.begin())
-        pre(*(encoderNeuronsPerLayer.begin() + encoderNeuronsPerLayer.size() - 1) % 2 == 0);
+        pre(*(encoderNeuronsPerLayer.begin() + encoderNeuronsPerLayer.size() - 1) % 2 == 0)
+        pre(*(encoderNeuronsPerLayer.begin() + encoderNeuronsPerLayer.size() - 1)
+            == *(decoderNeuronsPerLayer.begin() + decoderNeuronsPerLayer.size() - 1));
 
     // METHODS
 
